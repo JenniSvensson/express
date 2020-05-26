@@ -22,8 +22,7 @@ async function onRequestDoctors(request, response) {
   const doctors = await axios.get(
     "https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/doctors"
   );
-  // console.log(patients.data);
-  //const document = render(patients);
+
   const data = doctors.data;
 
   //is this the correct output?? it says array in the rubric
@@ -37,7 +36,6 @@ async function onRequestId(request, response) {
     `https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients/${params}`
   );
   const data = patient.data;
-  const id = request.params.id;
 
   response.send(JSON.stringify(data, null, 2));
 }
